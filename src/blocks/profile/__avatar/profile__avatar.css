@@ -3,14 +3,4 @@
   border-radius: 50%;
   width: 120px;
   height: 120px;
-  object-fit: cover;
-}
-
-.profile__avatar:hover {
-  opacity: .2;
-  cursor: pointer;
-}
-
-.profile__avatar:hover + .profile__edit-avatar {
-  display: block;
 }

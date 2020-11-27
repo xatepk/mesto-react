@@ -34,18 +34,28 @@ function Main(props) {
     <section className="profile">
       <div className="profile__view">
         <div style={{ backgroundImage: `url(${userAvatar})`,
-                      backgroundSize: 'cover' }} className="profile__avatar" />
-        <button className="profile__edit-avatar" onClick={props.onEditAvatar} aria-label="edit" type="button" />
+                      backgroundSize: 'cover' }}
+                      className="profile__avatar" />
+        <button className="profile__edit-avatar"
+                aria-label="edit"
+                type="button"
+                onClick={props.onEditAvatar} />
         <div className="profile__info">
           <div className="profile__heading">
             <h1 className="profile__name">{userName}</h1>
-            <button onClick={props.onEditProfile} className="profile__edit-button" aria-label="edit" type="button"></button>
+            <button onClick={props.onEditProfile}
+                    className="profile__edit-button"
+                    aria-label="edit"
+                    type="button" />
           </div>
           <p className="profile__about-self">{userDescription}</p>
         </div>
       </div>
 
-      <button className="profile__add-button" onClick={props.onAddPlace} aria-label="add" type="button"></button>
+      <button className="profile__add-button"
+              onClick={props.onAddPlace}
+              aria-label="add"
+              type="button" />
     </section>
     <section className="places">
       <ul className="places__list">

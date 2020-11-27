@@ -1,7 +1,7 @@
 function Card(props) {
   return (
-    <li className="place" onClick={props.onCardClick}>
-      <img className="place__image" alt={props.card.name} src={props.card.link} />
+    <li className="place">
+      <img className="place__image" alt={props.card.name} src={props.card.link} onClick={props.onCardClick} />
       <div className="place__description">
         <h2 className="place__name">{props.card.name}</h2>
         <div className="place__likes">
