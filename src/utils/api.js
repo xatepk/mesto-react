@@ -36,7 +36,7 @@ class Api{
       });
   }
 
-  saveUserInfo({ name, 'about-self': about }) {
+  saveUserInfo({ name, about }) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: 'PATCH',
       headers: this._headers,
@@ -92,6 +92,20 @@ class Api{
   delCard(id) {
     return fetch(`${this._baseUrl}/cards/${id}`, {
       method: 'DELETE',
+      headers: this._headers
+    })
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        }
+
+        return Promise.reject(`Ошибка: ${res.status}`);
+      });
+  }
+
+  changeLikeCardStatus(id, isLiked) {
+    return fetch(`${this._baseUrl}/cards/likes/${id}`, {
+      method: isLiked ? 'PUT' : 'DELETE',
       headers: this._headers
     })
       .then(res => {

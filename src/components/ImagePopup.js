@@ -1,7 +1,6 @@
-import cn from 'classnames'
+import cn from 'classnames';
 
 function ImagePopup(props) {
-  console.log(props);
   return (
   <div className={cn("popup popup_el_card", { "popup_opened" : props.card.isOpen})}>
     <div className="popup__container popup__container_transparent">
