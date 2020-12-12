@@ -32,10 +32,7 @@ function EditProfilePopup(props) {
       about: description,
     });
   }
-
-  if (!currentUser.name || !currentUser.description) {
-    return null;
-  }
+  
   return (
   <PopupWithForm name="edit" title="Редактировать профиль" {...props} onSubmit={handleSubmit}>
       <input  name="name" value={name} onChange={handleNameChange}

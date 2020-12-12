@@ -4,11 +4,11 @@ import api from '../utils/api.js';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
-import PopupWithForm from './PopupWithForm';
 import ImagePopup from './ImagePopup';
 import EditProfilePopup from './EditProfilePopup';
 import EditAvatarPopup from './EditAvatarPopup';
 import AddPlacePopup from './AddPlacePopup';
+import ConfirmationPopup from './ConfirmationPopup';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 function App() {
@@ -35,7 +35,7 @@ function App() {
     .catch((err) => {
       console.log(err);
     })
-  })
+  }, [])
 
   const handleEditAvatarClick = () => {
     setIsEditAvatarPopupOpen(true);
@@ -135,9 +135,7 @@ function App() {
     <AddPlacePopup  isOpen={isAddPlacePopupOpen}
                     onClose={closeAllPopups}
                     onAddPlace={handleAddPlaceSubmit} />
-    <PopupWithForm name="del" title="Вы уверены?">
-      <input type="submit" value= "Да" className="popup__confirmation-button" />
-    </PopupWithForm>
+    <ConfirmationPopup />
     <EditAvatarPopup isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} onUpdateAvatar={handleUpdateAvatar} />
     <ImagePopup card={selectedCard} onClose={closeAllPopups} />
     <Footer />
